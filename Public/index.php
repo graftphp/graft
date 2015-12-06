@@ -1,6 +1,8 @@
 <?php
 require '../App/config.php';
 
+date_default_timezone_set('Europe/London');
+
 // optional debug mode, verbose errors and disable caching
 if (GRAFT_CONFIG['Debug']) {
     // verbose error reporting

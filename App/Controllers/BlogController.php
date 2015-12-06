@@ -10,11 +10,19 @@ use GraftPHP\Framework\View;
 class BlogController
 {
 
+    public function delete($id)
+    {
+        $b = Blog::find($id);
+        $b->delete();
+
+        Functions::redirect('/');
+    }
+
     public function index() 
     {
         $b = new Blog();
 
-        $this->data['blog'] = Blog::All();
+        $this->data['blog'] = Blog::All('date', 'DESC');
 
         View::Render('index', $this->data);
     }
@@ -22,6 +30,17 @@ class BlogController
     public function store()
     {
         $b = new Blog();
+        $b->title = $_POST['title'];
+        $b->date = $_POST['date'];
+        $b->content = $_POST['content'];
+        $b->save();
+
+        Functions::redirect('/');
+    }
+
+    public function update()
+    {
+        $b = Blog::find($_POST['id']);
         $b->title = $_POST['title'];
         $b->date = $_POST['date'];
         $b->content = $_POST['content'];
