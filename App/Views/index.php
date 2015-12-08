@@ -3,7 +3,10 @@
 {content}
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-3">
+                {embed:embeds.latest_blog}
+            </div>
+            <div class="col-md-6 col-md-offset-1">
                 <h2>Blog</h2>
                 <?php foreach($blog as $b) : ?>
                     <div class="pull-right">
@@ -12,7 +15,7 @@
                         <a href="/<?=$b['id']?>/delete"
                             class="btn btn-xs btn-danger">Delete</a>
                     </div>
-                    <h4><?=$b['title']?> <small><?=date_format(date_create($b['date']), "d/m/Y")?></small></h4>
+                    <h4><?=$b['title']?> <small> <?=date_format(date_create($b['date']), "d/m/Y")?></small></h4>
                     <p><?=$b['content']?></p>
                     <hr />
 
