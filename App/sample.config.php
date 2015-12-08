@@ -8,12 +8,11 @@ const GRAFT_CONFIG = [
     '404Template' => '_404',
     'CookieLife' => 60 * 60 * 24 * 30, // 30 days
     'Debug' => true,
-    'DefaultTemplate' => '_SampleTemplate',
-    'ViewPath' => __DIR__ . '/views/',
+    'ViewPath' => __DIR__ . '/Views/',
     // optional
-    'DBHost' => '127.0.0.1',
-    'DBName' => 'test',
-    'DBUser' => 'root',
+    'DBHost' => '',
+    'DBName' => '',
+    'DBUser' => '',
     'DBPassword' => '',
 ];
 
@@ -21,11 +20,10 @@ const GRAFT_CONFIG = [
 // don't include trailing slashes in the routes :)
 // [url (string), controller (string), method (string)]
 const GRAFT_ROUTES = [
-    ['/admin/login', 'App\Controllers\UserController', 'login'],
-    ['/admin/logout', 'App\Controllers\UserController', 'logout'],
-    ['/sample/add', 'App\Controllers\SampleController', 'add'],
-    ['/sample/delete', 'App\Controllers\SampleController', 'delete'],
-    ['/', 'App\Controllers\SampleController', 'index'],
+    ['/', 'App\Controllers\BlogController', 'index'],
+    ['/store', 'App\Controllers\BlogController', 'store'],
+    ['/{}/delete', 'App\Controllers\BlogController', 'delete'],
+    ['/{}/update', 'App\Controllers\BlogController', 'update'],
 ];
 
 // Define the location of routes in packages
