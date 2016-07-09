@@ -5,8 +5,7 @@
     "homepage": "https://github.com/graftphp/graft",
     "type": "project",
     "require": {
-        "graftphp/framework": "*",
-        "graftphp/clout": "*"
+        "graftphp/framework": "*"
     },
     "autoload": {
         "psr-4": {
