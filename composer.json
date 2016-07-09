@@ -1,0 +1,16 @@
+{
+    "name":"graftphp/graft",
+    "description":"graft php",
+    "keywords": ["framework", "php"],
+    "homepage": "https://github.com/graftphp/graft",
+    "type": "project",
+    "require": {
+        "graftphp/framework": "*",
+        "graftphp/clout": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

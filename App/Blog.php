@@ -4,7 +4,7 @@ namespace App;
 
 use GraftPHP\Framework\Model;
 
-class Blog extends Model 
+class Blog extends Model
 {
 
     public static $db_tablename = 'blog';

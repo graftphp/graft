@@ -18,7 +18,7 @@ class BlogController
         Functions::redirect('/');
     }
 
-    public function index() 
+    public function index()
     {
         $b = new Blog();
 

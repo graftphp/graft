@@ -8,6 +8,7 @@
             </div>
             <div class="col-md-6 col-md-offset-1">
                 <h2>Blog</h2>
+                <?php if ($blog) : ?>
                 <?php foreach($blog as $b) : ?>
                     <div class="pull-right">
                         <button class="btn btn-xs btn-info" 
@@ -61,6 +62,7 @@
                         </div>
                     </div>            
                 <?php endforeach; ?>
+                <?php endif; ?>
                 <hr />
 
                 <form method="post" action="/store" class="form-horizontal">

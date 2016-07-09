@@ -16,6 +16,12 @@ const GRAFT_CONFIG = [
     'DBPassword' => '',
 ];
 
+// Define the location of routes in packages
+// the given class should have a public 'routes' array
+const GRAFT_VENDOR_SETTINGS = [
+   // 'GraftPHP\Clout\Settings',
+];
+
 // each route is an array
 // don't include trailing slashes in the routes :)
 // [url (string), controller (string), method (string)]
@@ -24,10 +30,4 @@ const GRAFT_ROUTES = [
     ['/store', 'App\Controllers\BlogController', 'store'],
     ['/{}/delete', 'App\Controllers\BlogController', 'delete'],
     ['/{}/update', 'App\Controllers\BlogController', 'update'],
-];
-
-// Define the location of routes in packages
-// the given class should have a public 'routes' array
-const GRAFT_VENDOR_SETTINGS = [
-   // 'GraftPHP\Clout\Settings',
 ];
