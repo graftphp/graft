@@ -11,8 +11,8 @@
                 <?php if ($blog) : ?>
                 <?php foreach($blog as $b) : ?>
                     <div class="pull-right">
-                        <button class="btn btn-xs btn-info" 
-                            data-toggle="modal" data-target="#modal<?=$b['id']?>">Edit</button> 
+                        <button class="btn btn-xs btn-info"
+                            data-toggle="modal" data-target="#modal<?=$b['id']?>">Edit</button>
                         <a href="/<?=$b['id']?>/delete"
                             class="btn btn-xs btn-danger">Delete</a>
                     </div>
@@ -29,24 +29,24 @@
                                         <fieldset>
                                             <legend>Add Record</legend>
                                             <div class="form-group">
-                                                <label class="col-md-4 control-label" for="title">Title</label>  
+                                                <label class="col-md-4 control-label" for="title">Title</label>
                                                 <div class="col-md-6">
-                                                    <input name="title" type="text" 
+                                                    <input name="title" type="text"
                                                         placeholder="title" class="form-control"
                                                         value="<?=$b['title']?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-md-4 control-label" for="date">Date</label>  
+                                                <label class="col-md-4 control-label" for="date">Date</label>
                                                 <div class="col-md-6">
-                                                    <input name="date" type="date" 
+                                                    <input name="date" type="date"
                                                         placeholder="date" class="form-control"
                                                         value="<?=$b['date']?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label" for="content">Content</label>
-                                                <div class="col-md-6">                     
+                                                <div class="col-md-6">
                                                     <textarea class="form-control" name="content"
                                                     ><?=$b['content']?></textarea>
                                                 </div>
@@ -60,7 +60,7 @@
                                 </form>
                             </div>
                         </div>
-                    </div>            
+                    </div>
                 <?php endforeach; ?>
                 <?php endif; ?>
                 <hr />
@@ -69,22 +69,22 @@
                     <fieldset>
                         <legend>Add Record</legend>
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="title">Title</label>  
+                            <label class="col-md-4 control-label" for="title">Title</label>
                             <div class="col-md-6">
-                                <input name="title" type="text" 
+                                <input name="title" type="text"
                                     placeholder="title" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="date">Date</label>  
+                            <label class="col-md-4 control-label" for="date">Date</label>
                             <div class="col-md-6">
-                                <input name="date" type="date" 
+                                <input name="date" type="date"
                                     placeholder="date" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="content">Content</label>
-                            <div class="col-md-6">                     
+                            <div class="col-md-6">
                                 <textarea class="form-control" name="content"></textarea>
                             </div>
                         </div>

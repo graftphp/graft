@@ -1,7 +1,11 @@
 <?php
-require '../App/config.php';
+const GRAFT_CONFIGPATH = '../App/config.php';
+if (!file_exists(GRAFT_CONFIGPATH)) {
+    die('Config file missing');
+}
+require GRAFT_CONFIGPATH;
 
-date_default_timezone_set('Europe/London');
+date_default_timezone_set(GRAFT_CONFIG['Timezone']);
 
 // optional debug mode, verbose errors and disable caching
 if (GRAFT_CONFIG['Debug']) {
@@ -32,7 +36,7 @@ function d($var, $die = false) {
     echo $r;
     if ($die) {
         die();
-    }    
+    }
 }
 
 function dd($var) {

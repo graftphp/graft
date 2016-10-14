@@ -8,12 +8,14 @@ const GRAFT_CONFIG = [
     '404Template' => '_404',
     'CookieLife' => 60 * 60 * 24 * 30, // 30 days
     'Debug' => true,
+    'Timezone' => 'Europe/London',
     'ViewPath' => __DIR__ . '/Views/',
     // optional
     'DBHost' => '',
     'DBName' => '',
     'DBUser' => '',
     'DBPassword' => '',
+    'DBPort' => 3306,
 ];
 
 // Define the location of routes in packages
