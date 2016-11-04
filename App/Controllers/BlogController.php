@@ -10,6 +10,15 @@ use GraftPHP\Framework\View;
 class BlogController
 {
 
+    public function __construct()
+    {
+        if (GRAFT_CONFIG['DBHost'] == '' ||
+            GRAFT_CONFIG['DBName'] == '' ||
+            GRAFT_CONFIG['DBUser']) {
+            die('A database connection is required to run the blog sample code.');
+        }
+    }
+
     public function delete($id)
     {
         $b = Blog::find($id);
