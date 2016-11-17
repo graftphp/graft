@@ -17,6 +17,8 @@ class BlogController
             GRAFT_CONFIG['DBUser'] == '') {
             die('A database connection is required to run the blog sample code.');
         }
+
+        $this->data['latest'] = Blog::All()->first();
     }
 
     public function delete($id)
@@ -29,8 +31,6 @@ class BlogController
 
     public function index()
     {
-        $b = new Blog();
-
         $this->data['blog'] = Blog::All('date', 'DESC');
 
         View::Render('index', $this->data);
