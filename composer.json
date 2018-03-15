@@ -8,6 +8,9 @@
         "graftphp/framework": "*"
     },
     "autoload": {
+        "files": [
+            "App/Util/helpers.php"
+        ],
         "psr-4": {
             "App\\": "App/"
         }
