@@ -8,23 +8,24 @@
             </div>
             <div class="col-md-6 col-md-offset-1">
                 <h2>Blog</h2>
-                <?php if ($blog) : ?>
-                <?php foreach($blog as $b) : ?>
+                <?php if ($blog): ?>
+                <?php foreach ($blog as $b): ?>
                     <div class="pull-right">
                         <button class="btn btn-xs btn-info"
-                            data-toggle="modal" data-target="#modal<?= $b->id ?>">Edit</button>
-                        <a href="/<?= $b->id ?>/delete"
+                            data-toggle="modal" data-target="#modal<?=$b->id?>">Edit</button>
+                        <a href="/<?=$b->id?>/delete"
                             class="btn btn-xs btn-danger">Delete</a>
                     </div>
-                    <h4><?= $b->title ?> <small> <?=date_format(date_create($b->date), "d/m/Y")?></small></h4>
-                    <p><?= $b->content ?></p>
+                    <h4><?=$b->title?> <small> <?=date_format(date_create($b->date), "d/m/Y")?></small></h4>
+                    <p><?=$b->content?></p>
                     <hr />
 
-                    <div class="modal fade" id="modal<?= $b->id ?>" tabindex="-1" role="dialog">
+                    <div class="modal fade" id="modal<?=$b->id?>" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                                <form method="post" action="/<?= $b->id ?>/update" class="form-horizontal">
-                                    <input type="hidden" name="id" value="<?= $b->id ?>">
+                                <form method="post" action="/<?=$b->id?>/update" class="form-horizontal">
+                                    <?=csrf_field()?>
+                                    <input type="hidden" name="id" value="<?=$b->id?>">
                                     <div class="modal-body">
                                         <fieldset>
                                             <legend>Add Record</legend>
@@ -33,7 +34,7 @@
                                                 <div class="col-md-6">
                                                     <input name="title" type="text"
                                                         placeholder="title" class="form-control"
-                                                        value="<?= $b->title ?>">
+                                                        value="<?=$b->title?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -41,14 +42,14 @@
                                                 <div class="col-md-6">
                                                     <input name="date" type="date"
                                                         placeholder="date" class="form-control"
-                                                        value="<?= $b->date ?>">
+                                                        value="<?=$b->date?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label" for="content">Content</label>
                                                 <div class="col-md-6">
                                                     <textarea class="form-control" name="content"
-                                                    ><?= $b->content ?></textarea>
+                                                    ><?=$b->content?></textarea>
                                                 </div>
                                             </div>
                                         </fieldset>
@@ -61,11 +62,12 @@
                             </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
-                <?php endif; ?>
+                <?php endforeach;?>
+                <?php endif;?>
                 <hr />
 
                 <form method="post" action="/store" class="form-horizontal">
+                    <?=csrf_field()?>
                     <fieldset>
                         <legend>Add Record</legend>
                         <div class="form-group">
