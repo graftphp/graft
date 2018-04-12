@@ -4,7 +4,7 @@ if (!file_exists(GRAFT_CONFIGPATH)) {
 	die('Config file missing');
 }
 require GRAFT_CONFIGPATH;
-require '../vendor/graftphp/clout/src/Util/helpers.php';
+
 date_default_timezone_set(GRAFT_CONFIG['Timezone']);
 
 // optional debug mode, verbose errors and disable caching
