@@ -21,7 +21,7 @@ const GRAFT_CONFIG = [
 // Define the location of routes in packages
 // the given class should have a public 'routes' array
 const GRAFT_VENDOR_SETTINGS = [
-   // 'GraftPHP\Clout\Settings',
+   // 'GraftPHP\Clout\Setting',
 ];
 
 // each route is an array
