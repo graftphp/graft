@@ -30,4 +30,16 @@ if (!session_start()) {
 
 require '../vendor/autoload.php';
 
-GraftPHP\Framework\Framework::Route();
+$url = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : explode('?', $_SERVER['REQUEST_URI'])[0];
+
+$graftFramework = new GraftPHP\Framework\Framework();
+
+if ($destination = $graftFramework->matchRoute($url)) {
+    $obj = new $destination[1];
+    call_user_func_array(
+        [$obj, $destination[2]],
+        $result
+    );
+} else {
+    GraftPHP\Framework\View::Error404();
+}

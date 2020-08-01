@@ -27,7 +27,7 @@ const GRAFT_VENDOR_SETTINGS = [
 // each route is an array
 // don't include trailing slashes in the routes :)
 // [url (string), controller (string), method (string)]
-const GRAFT_ROUTES = [
+const GRAFT_HTTP_ROUTES = [
     ['/', 'App\Controllers\BlogController', 'index'],
     ['/store', 'App\Controllers\BlogController', 'store'],
     ['/{}/delete', 'App\Controllers\BlogController', 'delete'],
