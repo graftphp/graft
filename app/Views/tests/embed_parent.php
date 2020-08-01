@@ -1,0 +1,1 @@
+PARENT{embed:tests.embed_child}

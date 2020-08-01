@@ -1,10 +1,12 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-const GRAFT_HTTP_ROUTES = [
-    ['/', 'TestNamespace\TestController', 'index'],
-    ['/objects/{}', 'TestNamespace\TestController', 'show'],
-];
+const GRAFT_CONFIGPATH = 'app/sample.config.php';
+if (!file_exists(GRAFT_CONFIGPATH)) {
+    die('Config file missing');
+}
+require GRAFT_CONFIGPATH;
+
 
 final class FrameworkTest extends TestCase
 {
@@ -31,10 +33,10 @@ final class FrameworkTest extends TestCase
 
     public function testRoutingWildcard(): void
     {
-        $url = str_replace('{}', uniqid(), GRAFT_HTTP_ROUTES[1][0]);
+        $url = str_replace('{}', uniqid(), GRAFT_HTTP_ROUTES[2][0]);
         $this->assertEquals(
             $this->framework->matchRoute($url),
-            GRAFT_HTTP_ROUTES[1]
+            GRAFT_HTTP_ROUTES[2]
         );
     }
 }
