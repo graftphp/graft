@@ -18,16 +18,16 @@ final class FrameworkTest extends TestCase
     public function testRouting404(): void
     {
         $this->assertEquals(
-            $this->framework->matchRoute('/doesnotexist'),
-            false
+            false,
+            $this->framework->matchRoute('/doesnotexist')
         );
     }
 
     public function testRoutingExact(): void
     {
         $this->assertEquals(
-            $this->framework->matchRoute(GRAFT_HTTP_ROUTES[0][0]),
-            GRAFT_HTTP_ROUTES[0]
+            GRAFT_HTTP_ROUTES[0],
+            $this->framework->matchRoute(GRAFT_HTTP_ROUTES[0][0])
         );
     }
 
@@ -35,8 +35,8 @@ final class FrameworkTest extends TestCase
     {
         $url = str_replace('{}', uniqid(), GRAFT_HTTP_ROUTES[2][0]);
         $this->assertEquals(
-            $this->framework->matchRoute($url),
-            GRAFT_HTTP_ROUTES[2]
+            GRAFT_HTTP_ROUTES[2],
+            $this->framework->matchRoute($url)
         );
     }
 }

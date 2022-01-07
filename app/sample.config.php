@@ -11,10 +11,10 @@ const GRAFT_CONFIG = [
     'Timezone' => 'Europe/London',
     'ViewPath' => __DIR__ . '/Views/',
     // optional
-    'DBHost' => '',
-    'DBName' => '',
-    'DBUser' => '',
-    'DBPassword' => '',
+    'DBHost' => '127.0.0.1',
+    'DBName' => 'graft',
+    'DBUser' => 'root',
+    'DBPassword' => 'root',
     'DBPort' => 3306,
 ];
 

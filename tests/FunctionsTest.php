@@ -6,8 +6,8 @@ final class FunctionsTest extends TestCase
     public function testUrlSafe(): void
     {
         $this->assertEquals(
-            GraftPHP\Framework\Functions::urlSafe('£%@\'---ABCD123'),
-            'abcd123'
+            'abcd123',
+            GraftPHP\Framework\Functions::urlSafe('£%@\'---ABCD123')
         );
     }
 }
